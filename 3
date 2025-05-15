@@ -1,0 +1,74 @@
+//Prosedur menampilkan kurva parabola 1
+procedure TForm1.BitBtn7Click(Sender: TObject);
+var x, y: integer;
+begin
+  for x := -image1.ClientWidth to image1.ClientWidth do
+  begin
+    y := x * x div 157;
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clLime;
+  end;
+end;
+
+//Prosedur menampilkan kurva parabola 2
+procedure TForm1.BitBtn8Click(Sender: TObject);
+var x, y: integer;
+begin
+  for x := -image1.ClientWidth to image1.ClientWidth do
+  begin
+    y := -x * x div 157;
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clLime;
+  end;
+end;
+
+//Prosedur menampilkan kurva parabola 3
+procedure TForm1.BitBtn9Click(Sender: TObject);
+var x, y: integer;
+begin
+  for y := -image1.ClientHeight to image1.ClientHeight do
+  begin
+    x := y * y div 157;
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clLime;
+  end;
+end;
+
+//Prosedur menampilkan kurva parabola 4
+procedure TForm1.BitBtn10Click(Sender: TObject);
+var x, y: integer;
+begin
+  for y := -image1.ClientHeight to image1.ClientHeight do
+  begin
+    x := -y * y div 157;
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clLime;
+  end;
+end;
+
+//Prosedur menampilkan kurva lingkaran
+procedure TForm1.BitBtn11Click(Sender: TObject);
+var x, y, r: integer;
+begin
+  r := image1.ClientWidth div 4;
+
+  for x := -r to r do
+  begin
+    y := round(sqrt(r * r - x * x));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clFuchsia;
+  end;
+
+  for x := -r to r do
+  begin
+    y := -round(sqrt(r * r - x * x));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clFuchsia;
+  end;
+
+  for y := -r to r do
+  begin
+    x := round(sqrt(r * r - y * y));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clFuchsia;
+  end;
+
+  for y := -r to r do
+  begin
+    x := -round(sqrt(r * r - y * y));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clFuchsia;
+  end;
+end;
