@@ -1,0 +1,43 @@
+//Prosedur menampilkan kurva cosinus 1
+procedure TForm1.BitBtn16Click(Sender: TObject);
+var x, y: integer;
+begin
+  for x := -image1.ClientWidth to image1.ClientWidth do
+  begin
+    y := round(50 * cos(x * Pi / 90));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clPurple;
+  end;
+end;
+
+//Prosedur menampilkan kurva cosinus 2
+procedure TForm1.BitBtn17Click(Sender: TObject);
+var x, y: integer;
+begin
+  for y := -image1.ClientHeight to image1.ClientHeight do
+  begin
+    x := round(50 * cos(y * Pi / 90));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clPurple;
+  end;
+end;
+
+//Prosedur menampilkan kurva tangen 1
+procedure TForm1.BitBtn18Click(Sender: TObject);
+var x, y: integer;
+begin
+  for x := -image1.ClientWidth to image1.ClientWidth do
+  begin
+    y := round(30 * sin(x * Pi / 45) / cos(x * Pi / 45));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clBlue;
+  end;
+end;
+
+//Prosedur menampilkan kurva tangen 2
+procedure TForm1.BitBtn19Click(Sender: TObject);
+var x, y: integer;
+begin
+  for y := -image1.ClientHeight to image1.ClientHeight do
+  begin
+    x := round(30 * sin(y * Pi / 45) / cos(y * Pi / 45));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clBlue;
+  end;
+end;
