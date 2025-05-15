@@ -1,0 +1,43 @@
+//Prosedur menampilkan garis horizontal 1
+procedure TForm1.BitBtn3Click(Sender: TObject);
+var x, y: integer;
+begin
+  for x := -image1.ClientWidth to image1.ClientWidth do
+  begin
+    y := image1.ClientHeight div 4;
+    image1.Canvas.Pixels[x, y] := clAqua;
+  end;
+end;
+
+//Prosedur menampilkan garis horizontal 2
+procedure TForm1.BitBtn4Click(Sender: TObject);
+var x, y: integer;
+begin
+  for x := -image1.ClientWidth to image1.ClientWidth do
+  begin
+    y := image1.ClientWidth - image1.ClientHeight div 4;
+    image1.Canvas.Pixels[x, y] := clAqua;
+  end;
+end;
+
+//Prosedur menampilkan garis diagonal 1
+procedure TForm1.BitBtn5Click(Sender: TObject);
+var x, y: integer;
+begin
+  for x := -image1.ClientWidth to image1.ClientWidth do
+  begin
+    y := x;
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clYellow;
+  end;
+end;
+
+//Prosedur menampilkan garis diagonal 2
+procedure TForm1.BitBtn6Click(Sender: TObject);
+var x, y: integer;
+begin
+  for x := -image1.ClientWidth to image1.ClientWidth do
+  begin
+    y := -x;
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clYellow;
+  end;
+end;
