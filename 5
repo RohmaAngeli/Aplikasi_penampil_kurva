@@ -1,0 +1,83 @@
+//Prosedur menampilkan kurva elips 1
+procedure TForm1.BitBtn12Click(Sender: TObject);
+var x, y: integer;
+const a = 250;
+      b = 75;
+begin
+  for x := -a to a do
+  begin
+    y := round(b * sqrt(1 - (x * x) / (a * a)));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clFuchsia;
+  end;
+
+  for x := -a to a do
+  begin
+    y := -round(b * sqrt(1 - (x * x) / (a * a)));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clFuchsia;
+  end;
+
+  for y := -b to b do
+  begin
+    x := round(a * sqrt(1 - (y * y) / (b * b)));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clFuchsia;
+  end;
+
+  for y := -b to b do
+  begin
+    x := -round(a * sqrt(1 - (y * y) / (b * b)));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clFuchsia;
+  end;
+end;
+
+//Prosedur menampilkan kurva elips 2
+procedure TForm1.BitBtn13Click(Sender: TObject);
+var x, y: integer;
+const a = 75;
+      b = 250;
+begin
+  for x := -a to a do
+  begin
+    y := round(b * sqrt(1 - (x * x) / (a * a)));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clFuchsia;
+  end;
+
+  for x := -a to a do
+  begin
+    y := -round(b * sqrt(1 - (x * x) / (a * a)));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clFuchsia;
+  end;
+
+  for y := -b to b do
+  begin
+    x := round(a * sqrt(1 - (y * y) / (b * b)));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clFuchsia;
+  end;
+
+  for y := -b to b do
+  begin
+    x := -round(a * sqrt(1 - (y * y) / (b * b)));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clFuchsia;
+  end;
+end;
+
+//Prosedur menampilkan kurva sinus 1
+procedure TForm1.BitBtn14Click(Sender: TObject);
+var x, y: integer;
+begin
+  for x := -image1.ClientWidth to image1.ClientWidth do
+  begin
+    y := round(50 * sin(x * Pi / 90));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clPurple;
+  end;
+end;
+
+//Prosedur menampilkan kurva sinus 2
+procedure TForm1.BitBtn15Click(Sender: TObject);
+var x, y: integer;
+begin
+  for y := -image1.ClientHeight to image1.ClientHeight do
+  begin
+    x := round(50 * sin(y * Pi / 90));
+    image1.Canvas.Pixels[x + image1.ClientWidth div 2, -y + image1.ClientHeight div 2] := clPurple;
+  end;
+end;
